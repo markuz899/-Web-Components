@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Input text</title>
+  </head>
+
+  <body>
+    <div>
+      <input-box
+        name="input"
+        placeholder="Placeholder *"
+        attributess='[
+            {"type": "id", "value":"inputID"},
+            {"type": "type", "value":"text"},
+            {"type": "class", "value":"inputClass"}
+        ]'
+      >
+      </input-box>
+    </div>
+    <button onclick="verify()">verifica value</button>
+
+    <script>
+      const verify = () => {
+        const webComp = document.querySelector("input-box");
+        const input = webComp.shadowRoot.querySelector("#inputID");
+        console.log(input.value);
+      };
+    </script>
+
+    <script src="./index.js"></script>
+  </body>
+</html>
